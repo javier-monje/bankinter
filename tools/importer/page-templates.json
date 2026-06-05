@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.bankinter.com/banca/inicio"
+      ],
+      "description": "Bankinter main banking homepage with hero, product cards, promotions, and financial services overview",
+      "blocks": [
+        {
+          "name": "hero-product",
+          "instances": [
+            ".elem1 .banner-hero",
+            ".elem4 .banner-hero"
+          ]
+        },
+        {
+          "name": "hero-promo",
+          "instances": [
+            ".elem6 .banner-hero",
+            ".elem3 .banner-hero"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            ".featured-group"
+          ]
+        },
+        {
+          "name": "columns-media",
+          "instances": [
+            ".video.video_orange"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            ".card-v2.card-v2--horizontal"
+          ]
+        },
+        {
+          "name": "columns-contact",
+          "instances": [
+            ".call-me"
+          ]
+        },
+        {
+          "name": "cards-links",
+          "instances": [
+            ".content-box.content-box--border"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero - Digital Account",
+          "selector": "section:has(.elem1)",
+          "style": null,
+          "blocks": [
+            "hero-product"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Product Promotions",
+          "selector": "section:has(.elem5)",
+          "style": null,
+          "blocks": [
+            "hero-promo",
+            "hero-product"
+          ],
+          "defaultContent": [
+            ".elem5 .content-box-simple__link"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Variable-Rate Mortgage",
+          "selector": "section:has(.elem22)",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Investment Funds Video",
+          "selector": "section:has(.elem10)",
+          "style": null,
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Service Promotion Cards",
+          "selector": "section:has(.card-v2)",
+          "style": null,
+          "blocks": [
+            "cards-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Broker Zero",
+          "selector": "section:has(.elem3)",
+          "style": null,
+          "blocks": [
+            "hero-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Bankinter Listens (Contact)",
+          "selector": "section:has(.call-me)",
+          "style": "grey",
+          "blocks": [
+            "columns-contact"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Quick Links",
+          "selector": "section:has(.content-box--border)",
+          "style": null,
+          "blocks": [
+            "cards-links"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

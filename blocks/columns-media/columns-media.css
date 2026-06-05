@@ -1,0 +1,137 @@
+/* stylelint-disable no-descending-specificity */
+
+/* columns-media: two-column layout with video + text */
+.columns-media > div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Video column */
+.columns-media .columns-media-video-col {
+  position: relative;
+  padding-left: 16px;
+  padding-bottom: 24px;
+}
+
+/* Orange decorative square behind the video */
+.columns-media .columns-media-video-col::before {
+  content: "";
+  position: absolute;
+  background: var(--accent-color);
+  width: 120px;
+  height: 120px;
+  bottom: -16px;
+  left: -16px;
+  z-index: 0;
+}
+
+/* Video wrapper (contains the iframe) */
+.columns-media .columns-media-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.columns-media .columns-media-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Text column */
+.columns-media .columns-media-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* H2 eyebrow: small uppercase label */
+.columns-media .columns-media-text-col h2 {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 24px;
+  margin: 0 0 24px;
+  color: var(--text-color);
+}
+
+/* H3 title: large bold heading */
+.columns-media .columns-media-text-col h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 24px;
+  color: var(--text-color);
+}
+
+/* Description paragraph */
+.columns-media .columns-media-text-col p {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 40px;
+  color: var(--text-color);
+}
+
+/* CTA button */
+.columns-media .columns-media-text-col p a:any-link {
+  display: inline-block;
+  padding: 0 16px;
+  border: 1px solid var(--accent-dark-color);
+  border-radius: var(--border-radius-pill);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 48px;
+  height: 48px;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.columns-media .columns-media-text-col p a:hover {
+  background-color: var(--accent-dark-color);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Desktop layout */
+@media (width >= 900px) {
+  .columns-media > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .columns-media .columns-media-video-col {
+    flex: 1 1 50%;
+    min-width: 0;
+    padding-left: 24px;
+    padding-bottom: 24px;
+  }
+
+  /* Scale orange square for desktop */
+  .columns-media .columns-media-video-col::before {
+    width: 263px;
+    height: 263px;
+    bottom: -24px;
+    left: -24px;
+  }
+
+  .columns-media .columns-media-text-col {
+    flex: 1 1 42%;
+    min-width: 0;
+  }
+
+  .columns-media .columns-media-text-col h3 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}

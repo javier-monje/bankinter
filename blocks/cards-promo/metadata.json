@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-05T10:31:41.192Z",
+  "sourceContext": {
+    "originUrl": "https://www.bankinter.com/banca/en/home",
+    "originPage": "banking homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "service-promotion",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + subheading + description + CTA per card",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "service promotion cards with images",
+      "feature highlight cards with CTAs",
+      "product category cards"
+    ],
+    "notSuitableFor": [
+      "simple text-only link lists",
+      "icon-based navigation cards",
+      "image gallery grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/banca/inicio"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-05T10:31:41.192Z"
+  }
+}

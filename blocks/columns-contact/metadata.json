@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-contact",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-05T10:31:41.177Z",
+  "sourceContext": {
+    "originUrl": "https://www.bankinter.com/banca/en/home",
+    "originPage": "banking homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "compact",
+    "purpose": "contact-info",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + text column + CTA button column + phone info column",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "contact information bars",
+      "customer support sections",
+      "call-to-action with phone number layouts"
+    ],
+    "notSuitableFor": [
+      "image-heavy layouts",
+      "product feature comparisons",
+      "multi-row content sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/banca/inicio"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-05T10:31:41.177Z"
+  }
+}

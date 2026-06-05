@@ -1,0 +1,138 @@
+/* stylelint-disable no-descending-specificity */
+
+/*
+ * Cards Links — icon-based quick navigation boxes
+ * Source: .content-box.content-box--border on bankinter.com
+ *
+ * Extracted values:
+ * - Card: flex row, align-items center, padding 24px, border 1px solid rgb(235 238 245)
+ * - Icon square: 72x72, colored background
+ * - Text: font-size 20px, weight 400, line-height 24px, padding 0 40px 0 24px
+ * - Arrow: 24x24
+ * - Hover: text underline, shadow 0 6px 30px rgb(95 106 131 / 15%), icon lift
+ */
+
+/* --- Grid container for adjacent cards-links blocks --- */
+.cards-links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Wrapper inside grid — reset padding/margin */
+.cards-links-grid .cards-links-wrapper {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+
+/* Standalone wrapper (not in grid) */
+.cards-links-wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 8px 24px;
+}
+
+/* Block container */
+.cards-links {
+  padding: 0;
+  margin: 0;
+}
+
+/* The link card — main interactive element */
+.cards-links .cards-links-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid rgb(235 238 245);
+  border-radius: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: box-shadow 0.25s, transform 0.25s;
+  cursor: pointer;
+  min-height: 122px;
+  box-sizing: border-box;
+}
+
+.cards-links .cards-links-link:hover {
+  box-shadow: 0 6px 30px rgb(95 106 131 / 15%);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Icon square — colored background */
+.cards-links .cards-links-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  background-color: var(--yellow-color);
+  border-radius: 0;
+  transition: transform 0.25s;
+}
+
+.cards-links .cards-links-link:hover .cards-links-icon {
+  transform: translateY(-2px);
+}
+
+/* Color variants based on wrapper position within grid */
+.cards-links-grid .cards-links-wrapper:nth-child(3n + 1) .cards-links-icon {
+  background-color: rgb(254 212 48);
+}
+
+.cards-links-grid .cards-links-wrapper:nth-child(3n + 2) .cards-links-icon {
+  background-color: rgb(255 130 28);
+}
+
+.cards-links-grid .cards-links-wrapper:nth-child(3n + 3) .cards-links-icon {
+  background-color: rgb(181 240 239);
+}
+
+/* Text label */
+.cards-links .cards-links-text {
+  flex: 1;
+  padding: 0 40px 0 24px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.cards-links .cards-links-link:hover .cards-links-text {
+  text-decoration: underline;
+}
+
+/* Arrow chevron */
+.cards-links .cards-links-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+}
+
+.cards-links .cards-links-arrow::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--text-color);
+  border-right: 2px solid var(--text-color);
+  transform: rotate(45deg);
+}
+
+/* --- Desktop: 3-column grid --- */
+@media (width >= 900px) {
+  .cards-links-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

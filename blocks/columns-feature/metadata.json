@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-05T10:31:33.251Z",
+  "sourceContext": {
+    "originUrl": "https://www.bankinter.com/banca/en/home",
+    "originPage": "banking homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-comparison",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "text column (heading + list + CTAs) + feature cards column + background image",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product comparison layouts",
+      "mortgage or loan rate presentations",
+      "feature highlight sections with side-by-side cards"
+    ],
+    "notSuitableFor": [
+      "simple text-only columns",
+      "image gallery layouts",
+      "single-column content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/banca/inicio"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-05T10:31:33.251Z"
+  }
+}

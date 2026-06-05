@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-promo",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-05T10:31:33.234Z",
+  "sourceContext": {
+    "originUrl": "https://www.bankinter.com/banca/en/home",
+    "originPage": "banking homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "promotional-banner",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + subheading + paragraph + bullet list + 1 CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional banners with background images",
+      "service highlight sections",
+      "investment or product awareness banners"
+    ],
+    "notSuitableFor": [
+      "pages requiring multiple CTAs",
+      "complex product pages with rate comparisons",
+      "minimal text-only sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/banca/inicio"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-05T10:31:33.234Z"
+  }
+}

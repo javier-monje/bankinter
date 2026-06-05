@@ -1,0 +1,138 @@
+/* columns-contact — compact 3-column contact information bar */
+
+/* Block padding matches source: 32px top, 40px bottom */
+.columns-contact {
+  padding: 32px 0 40px;
+}
+
+/* Row: flex column on mobile, row on desktop */
+.columns-contact > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* All cells */
+.columns-contact > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Heading cell */
+.columns-contact > div > div:first-child h2 {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  margin-bottom: 8px;
+}
+
+/* Description text in heading cell */
+.columns-contact > div > div:first-child p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* CTA cell — center the button */
+.columns-contact > div > div:nth-child(2) {
+  align-items: center;
+}
+
+/* CTA button: style the plain link as an orange pill button */
+.columns-contact > div > div:nth-child(2) p {
+  margin: 0;
+}
+
+.columns-contact > div > div:nth-child(2) a:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 185px;
+  height: 48px;
+  padding: 0 16px;
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-dark-color);
+  border-radius: var(--border-radius-pill);
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.columns-contact > div > div:nth-child(2) a:hover {
+  background-color: var(--accent-dark-color);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Phone/contact info cell */
+.columns-contact > div > div:last-child p:first-child {
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--text-color);
+  margin: 0 0 4px;
+}
+
+/* Phone number (strong inside the text) */
+.columns-contact > div > div:last-child strong {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ATMs and branches link */
+.columns-contact > div > div:last-child p:last-child {
+  margin: 8px 0 0;
+}
+
+.columns-contact > div > div:last-child p:last-child a:any-link {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  line-height: 24px;
+}
+
+.columns-contact > div > div:last-child p:last-child a:hover {
+  text-decoration: underline;
+}
+
+/* Arrow after ATMs link */
+.columns-contact > div > div:last-child p:last-child a::after {
+  content: "\2192";
+  margin-left: 6px;
+}
+
+/* Desktop: 3-column layout */
+@media (width >= 900px) {
+  .columns-contact > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Column proportions: 5/12, 4/12, 3/12 */
+  .columns-contact > div > div:first-child {
+    flex: 0 0 41.67%;
+    max-width: 41.67%;
+  }
+
+  .columns-contact > div > div:nth-child(2) {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+
+  .columns-contact > div > div:last-child {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}

@@ -1,0 +1,196 @@
+/* stylelint-disable no-descending-specificity */
+
+/* Full-width wrapper override */
+.hero-promo-container .hero-promo-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Block container */
+.hero-promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 24px;
+  min-height: 360px;
+  overflow: hidden;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 23.76px;
+  color: #fff;
+}
+
+/* Dark gradient overlay for text readability */
+.hero-promo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 40%) 60%, rgb(0 0 0 / 0%) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Background image - first row holds the picture */
+.hero-promo > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-promo > div:first-child > div {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-promo > div:first-child picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.hero-promo > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content row - second row */
+.hero-promo > div:last-child {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+}
+
+/* All cells within content row */
+.hero-promo > div:last-child > div {
+  margin-bottom: 0;
+}
+
+/* H2 - category/subtitle label */
+.hero-promo h2 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 24px;
+  line-height: 21px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* H3 - main title */
+.hero-promo h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 24px;
+  line-height: 1.22;
+}
+
+/* Paragraph text */
+.hero-promo p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 23.76px;
+  margin: 0 0 16px;
+}
+
+/* Disclaimer text (smaller) */
+.hero-promo > div:last-child > div:nth-child(4) p {
+  font-size: 14px;
+  color: rgb(255 255 255 / 70%);
+  margin-bottom: 16px;
+}
+
+/* Bullet list */
+.hero-promo ul {
+  padding: 0;
+  margin: 0 0 16px;
+  list-style: none;
+}
+
+.hero-promo li {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 23.76px;
+  margin: 0 0 16px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.hero-promo li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  background: transparent;
+}
+
+/* CTA link - styled as pill button */
+.hero-promo > div:last-child > div:last-child {
+  margin-top: 16px;
+}
+
+main .hero-promo a:any-link {
+  display: inline-block;
+  padding: 0 24px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 48px;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid var(--accent-dark-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+main .hero-promo a:hover {
+  background-color: var(--accent-dark-color);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* No-image variant (fallback when no picture is present) */
+.hero-promo.no-image::after {
+  display: none;
+}
+
+.hero-promo.no-image {
+  background-color: var(--grey-color);
+}
+
+.hero-promo.no-image h2,
+.hero-promo.no-image h3,
+.hero-promo.no-image p,
+.hero-promo.no-image li {
+  color: var(--text-color);
+}
+
+/* Desktop */
+@media (width >= 900px) {
+  .hero-promo {
+    padding: 40px;
+    min-height: 430px;
+  }
+
+  .hero-promo h3 {
+    font-size: 40px;
+    line-height: 48.8px;
+    margin-bottom: 32px;
+  }
+
+  .hero-promo > div:last-child > div:last-child {
+    margin-top: 24px;
+  }
+}

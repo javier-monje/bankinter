@@ -1,0 +1,195 @@
+/* stylelint-disable no-descending-specificity */
+
+/* Cards Promo — horizontal promotional cards
+ * Source: .card-v2.card-v2--horizontal on bankinter.com
+ * Layout: two cards side-by-side on desktop, each with image left + text right
+ */
+
+/* Section-level: place sibling cards-promo-wrappers side by side.
+ * The section may also contain other block wrappers (e.g. columns-media-wrapper),
+ * so we use CSS grid to place only the cards-promo-wrappers in a 2-col grid. */
+.section.cards-promo-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section.cards-promo-container > * {
+  grid-column: 1 / -1;
+}
+
+@media (width >= 900px) {
+  .section.cards-promo-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section.cards-promo-container > :not(.cards-promo-wrapper) {
+    grid-column: 1 / -1;
+  }
+
+  .section.cards-promo-container > .cards-promo-wrapper {
+    grid-column: auto;
+  }
+}
+
+/* Wrapper reset — remove default max-width/padding from EDS section > div rule */
+.cards-promo-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+/* Block-level reset */
+.cards-promo > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.cards-promo > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: #edfcfb;
+  border-radius: 24px;
+  overflow: hidden;
+  border: none;
+  height: 100%;
+}
+
+/* Second cards-promo wrapper in the section gets yellow background */
+.section.cards-promo-container > .cards-promo-wrapper ~ .cards-promo-wrapper .cards-promo > ul > li {
+  background-color: #fef4cb;
+}
+
+/* Card image */
+.cards-promo .cards-promo-card-image {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.cards-promo .cards-promo-card-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cards-promo .cards-promo-card-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card body cells — text content area */
+.cards-promo .cards-promo-card-body {
+  padding: 0 16px;
+}
+
+/* First body cell (h2 descriptor) gets top padding */
+.cards-promo .cards-promo-card-image + .cards-promo-card-body {
+  padding-top: 16px;
+}
+
+/* Last body cell (button) gets bottom padding and auto margin for push-down */
+.cards-promo .cards-promo-card-body:last-child {
+  padding-bottom: 24px;
+  margin-top: auto;
+}
+
+/* Descriptor H2 — small uppercase label */
+.cards-promo h2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-color);
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+/* Title H3 — bold main heading */
+.cards-promo h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-color);
+  margin: 0 0 16px;
+}
+
+/* Description text */
+.cards-promo .cards-promo-card-body p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color);
+  margin: 0 0 16px;
+}
+
+/* CTA Button override — match source styling */
+main .cards-promo a.button:any-link {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-dark-color);
+  border-radius: var(--border-radius-pill);
+  padding: 0 16px;
+  height: 48px;
+  line-height: 48px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-block;
+}
+
+main .cards-promo a.button:hover {
+  background-color: var(--accent-dark-color);
+  border-color: var(--accent-dark-color);
+  transform: translateY(-1px);
+}
+
+/* Button wrapper reset */
+main .cards-promo p.button-wrapper {
+  margin: 0;
+}
+
+/* --- Desktop layout: horizontal card (image left, text right) --- */
+@media (width >= 900px) {
+  .cards-promo > ul > li {
+    display: grid;
+    grid-template-columns: 48% 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  /* Image spans the full height of the card in column 1 */
+  .cards-promo .cards-promo-card-image {
+    grid-column: 1;
+    grid-row: 1 / -1;
+  }
+
+  .cards-promo .cards-promo-card-image img {
+    height: 100%;
+    min-height: 400px;
+    max-height: 600px;
+  }
+
+  /* All body cells go into column 2 */
+  .cards-promo .cards-promo-card-body {
+    grid-column: 2;
+    padding: 0 24px;
+  }
+
+  .cards-promo .cards-promo-card-image + .cards-promo-card-body {
+    padding-top: 24px;
+  }
+
+  .cards-promo .cards-promo-card-body:last-child {
+    padding-bottom: 24px;
+    align-self: end;
+  }
+
+  .cards-promo h3 {
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
